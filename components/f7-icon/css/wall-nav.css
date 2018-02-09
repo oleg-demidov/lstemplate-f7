@@ -1,0 +1,10 @@
+.ls-nav--wall-buttons.ls-nav--large.ls-nav--pills > .ls-nav-item {
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.ls-nav--wall-buttons.ls-nav--large.ls-nav--pills > .ls-nav-item > .ls-nav-item-link {
+    padding: 9px 17px;
+    line-height: 20px;
+    
+}

@@ -1,0 +1,13 @@
+{
+    "name": "button",
+    "version": "1.0.0",
+    "dependencies": {
+    },
+    "templates": {
+    },
+    "scripts": {
+    },
+    "styles": {
+        "add": "css/addbutton.css"
+    }
+}

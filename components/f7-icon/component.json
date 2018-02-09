@@ -1,0 +1,12 @@
+{
+    "name": "f7-icon",
+    "version": "1.0.0",
+    "dependencies": {
+    },
+    "templates": {
+        "f7-icon": "icon.tpl"
+    },
+    "styles": {
+        
+    }
+}

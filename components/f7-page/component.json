@@ -1,0 +1,12 @@
+{
+    "name": "f7-page",
+    "version": "1.0.0",
+    "dependencies": {
+    },
+    "templates": {
+        "f7-page": "page.tpl"
+    },
+    "styles": {
+        
+    }
+}

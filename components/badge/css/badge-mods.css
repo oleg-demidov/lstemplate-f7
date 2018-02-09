@@ -1,0 +1,12 @@
+
+.ls-badge--success {
+    background: #fecc00;
+}
+
+.ls-badge--warning {
+    background-color: #f1c202;
+}
+.ls-badge--large {
+        font-size: 16px;
+    padding: 4px 10px;
+}

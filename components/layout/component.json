@@ -1,0 +1,7 @@
+{
+   
+    "templates": {
+        "toggle": "layout.toggle.tpl",
+        "page": "layout.page.tpl"
+    }
+}

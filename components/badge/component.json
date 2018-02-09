@@ -1,0 +1,11 @@
+{
+    "name": "badge",
+    "version": "1.0.0",
+    "dependencies": {
+    },
+    "templates": {
+    },
+    "styles": {
+        "mods":"css/badge-mods.css"
+    }
+}

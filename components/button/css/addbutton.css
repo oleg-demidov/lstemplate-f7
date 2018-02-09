@@ -1,0 +1,114 @@
+
+/**
+ * Colors
+ */
+.ls-button {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+.ls-button:active,
+.ls-button.active,
+.ls-button:hover {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+
+.ls-button--primary {
+    color: #fff;
+    background-color: #2f8bbc;
+    border-color: #005a8a;
+}
+.ls-button--primary:active,
+.ls-button--primary.active,
+.ls-button--primary:hover {
+    color: #fff;
+    background-color: #016194;
+    border-color: #005a8a;
+}
+
+.ls-button--success {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+.ls-button--success:active,
+.ls-button--success.active,
+.ls-button--success:hover {
+    color: #fff;
+    background-color: #449d44;
+    border-color: #398439;
+}
+
+.ls-button--info {
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+}
+.ls-button--info:active,
+.ls-button--info.active,
+.ls-button--info:hover {
+    color: #fff;
+    background-color: #31b0d5;
+    border-color: #269abc;
+}
+
+.ls-button--warning {
+    color: #323131;
+    background-color: #f8c300;
+    border-color: #b18e00;
+}
+.ls-button--warning:active,
+.ls-button--warning.active,
+.ls-button--warning:hover {
+    color: #222;
+    background-color: #d6a800;
+    border-color: #9c7b00;
+}
+
+.ls-button--danger {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+.ls-button--danger:active,
+.ls-button--danger.active,
+.ls-button--danger:hover {
+    color: #fff;
+    background-color: #c9302c;
+    border-color: #ac2925;
+}
+
+/**
+ * Icon
+ */
+.ls-button.ls-button--icon { padding-left: 8px; padding-right: 8px; }
+.ls-button.ls-button--icon [class^="icon-"],
+.ls-button.ls-button--icon [class*=" icon-"] { margin-right: 0; float: none; }
+
+
+
+/**
+ * Loading
+ */
+.ls-button[disabled].ls-loading,
+.ls-button.ls-loading {
+    color: transparent;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    transition: none;
+}
+
+/**
+ * Счетчик
+ */
+.ls-button .ls-badge {
+    vertical-align: middle;
+    line-height: 18px;
+}
+.ls-button--primary .ls-badge { background: #fff; color: #286090; }
+.ls-button--success .ls-badge { background: #fff; color: #5cb85c; }
+.ls-button--info    .ls-badge { background: #fff; color: #5bc0de; }
+.ls-button--warning .ls-badge { background: #fff; color: #f0ad4e; }
+.ls-button--danger  .ls-badge { background: #fff; color: #d9534f; }

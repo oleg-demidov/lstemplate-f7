@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin>
+    <name>
+        <lang name="default">Mobile</lang>
+    </name>
+    <author>
+        <lang name="default">Oleg Demidov</lang>
+    </author>
+    <homepage>vc.com/udemidova</homepage>
+    <version>1.0</version>
+    <requires>
+        <livestreet>2.0</livestreet>
+        <plugins>
+        </plugins>
+    </requires>
+    <description>
+        <lang name="ru">Мобильный шаблон</lang>
+        <lang name="default">Mobile template</lang>
+    </description>
+    <themes>
+        <item>
+            <value>default</value>
+            <description>
+                <lang name="ru">Автоматическая по-умолчанию</lang>
+                <lang name="default">Auto</lang>
+            </description>
+        </item>
+        <item>
+            <value>md_light</value>
+            <description>
+                <lang name="ru">Материал дизайн светлая</lang>
+                <lang name="default">Material design light</lang>
+            </description>
+        </item>
+        <item>
+            <value>md_dark</value>
+            <description>
+                <lang name="ru">Материал дизайн темная</lang>
+                <lang name="default">Material design dark</lang>
+            </description>
+        </item>
+        <item>
+            <value>ios_light</value>
+            <description>
+                <lang name="ru">Эппл светлая</lang>
+                <lang name="default">Apple light</lang>
+            </description>
+        </item>
+        <item>
+            <value>ios_dark</value>
+            <description>
+                <lang name="ru">Эппл темная</lang>
+                <lang name="default">Apple dark</lang>
+            </description>
+        </item>
+    </themes>
+</skin>

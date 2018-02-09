@@ -1,0 +1,21 @@
+/**
+ * Список с информацией
+ */
+.ls-info-list .fa{color: #000;}
+
+.ls-info-list                 { margin-bottom: 20px; list-style: none; padding: 0; }
+.ls-info-list:last-child      { margin-bottom: 0; }
+.ls-info-list-item            { margin-bottom: 5px; overflow: hidden; }
+.ls-info-list-item:last-child { margin-bottom: 0; }
+.ls-info-list-item-label      { opacity: .6; float: left; width: 130px; }
+.ls-info-list-item-content    { font-weight: normal; display: inline-block; }
+
+.ls-info-list--large                    { font-size: 18px; line-height: 25px; }
+.ls-info-list--large .ls-info-list-item              { margin-bottom: 10px; }
+.ls-info-list--large .ls-info-list-item:last-child    { margin-bottom: 0; }
+
+.ls-info-list--long .ls-info-list-item-label              { min-width: 20em; }
+
+.ls-info-list--slender .ls-info-list-item-label{
+    min-width: 8em;
+}
