@@ -67,13 +67,28 @@
             <div class="view view-main">
                 {block 'layout_view'}
                                 
-                    {block 'layout_page'}
-
-                        {**
-                        *  Начало page
-                        *}
+                    {*  
+                        View common toolbar 
+                    *}
+                    {block 'layout_toolbar_common'}
+                        
+                        {component 'f7-toolbar' items=[
+                            [ 'text' => $aLang.topic.topics,   'url' => {router page='/'},      'name' => 'blog', 'icon' => ['name'=>'list' ]],
+                            [ 'text' => $aLang.blog.blogs,     'url' => {router page='blogs'},  'name' => 'blogs' ],
+                            [ 'text' => $aLang.user.users,     'url' => {router page='people'}, 'name' => 'people' ],
+                            [ 'text' => $aLang.activity.title, 'url' => {router page='stream'}, 'name' => 'stream' ]
+                        ]}
+                    
+                    {/block}
+                    
+                    
+                    {**
+                    *  Начало page
+                    *}
+                    {block 'layout_page'}                       
 
                         {component 'layout.page'}
+                        
                     {/block}
                     
                 {/block}

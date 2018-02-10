@@ -1,0 +1,14 @@
+{
+    "name": "f7-toolbar",
+    "version": "1.0.0",
+    "dependencies": {
+        "f7-link": "*"
+    },
+    "templates": {
+        "f7-toolbar": "toolbar.tpl"
+    },
+    "scripts": {
+    },
+    "styles": {
+    }
+}

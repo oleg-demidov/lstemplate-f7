@@ -1,9 +1,9 @@
 
 
 {* Название компонента *}
-{$component = 'f7-icon'}
+{$component = 'f7-icons'}
 
-{component_define_params params=[ 'style', 'name', 'classes', 'mods',  'attributes' , 'badge', 'badgeColor']}
+{component_define_params params=[ 'style', 'icon', 'classes', 'mods',  'attributes' , 'badge', 'badgeColor', 'style']}
 
 {$style = $style|default:'md'}
 
@@ -12,11 +12,10 @@
     'ios' => 'f7-icons ios-only'
 ]}
 
-{if}
-    {$classes = "{$classes} {$stylesIcon[$style]}"}
-{/if}
+{$classes = "{$classes} {$stylesIcon[$style]}"}
 
-<i class="{$component} icon {$classes} {cmods name=$component mods=$mods}" {cattr list=$attributes}>
-    {$name}
+<i class="{$component}{$classes} {cmods name=$component mods=$mods}" {cattr list=$attributes}>
+    {$icon}
     {if $badge}{component 'f7-badge' value=$badge color={$badgeColor}}{/if}
 </i>
+

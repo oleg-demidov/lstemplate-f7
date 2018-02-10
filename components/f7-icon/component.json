@@ -7,6 +7,6 @@
         "f7-icon": "icon.tpl"
     },
     "styles": {
-        
+        "f7-icons":"css/framework7-icons/css/framework7-icons.css"
     }
 }

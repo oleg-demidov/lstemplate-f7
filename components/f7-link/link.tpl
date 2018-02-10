@@ -1,7 +1,7 @@
 
 
 {* Название компонента *}
-{$component = 'f7-link'}
+{$component = 'link'}
 
 {component_define_params params=[ 'menu', 'url', 'text', 'icon', 'badge', 'badgeColor', 'popover', 'isExternal', 'isActive',  'attributes']}
 
@@ -29,9 +29,9 @@
 
 {* link*}
     
-<a class="link {$component} {cmods name=$component mods=$mods} {$classes}" {cattr list=$attributes} href="{$url}">
+<a class="{$component} {cmods name=$component mods=$mods} {$classes}" {cattr list=$attributes} href="{$url}">
     {if $icon}
-        {component 'f7-icon' name=$icon.name badgeColor=$badgeColor badge=$badge}
+        {component 'f7-icon' icon=$icon.name badgeColor=$badgeColor badge=$badge}
         {if $text}
             <span>{$text}</span>
         {/if}       

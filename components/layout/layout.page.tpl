@@ -2,8 +2,6 @@
 *  Начало page
 *}
 
-{*include "{$LS->Component_GetPath('f7-page')}/page.tpl"*}
-
 <div data-name="home" class="page">
 
         {**
@@ -36,8 +34,11 @@
                 </div>
             {/block}
         </div>
-
-
+        
+        {*  
+            Fixed toolbar goes ALWAYS after Navbar 
+        *}
+        {block 'layout_toolbar_fixed'}{/block} 
 
         {**
         *  Контент page
@@ -53,22 +54,12 @@
                 {show_blocks group='top' }
 
             {/block}
+            
+            {*  
+                Static toolbar goes in the end inside of page-content
+            *}
+            {block 'layout_toolbar_static'}{/block} 
         </div>
     
 </div>
-{**
-*  Конец page
-*}
-
-{block 'layout_toolbar'}
-    <div class="toolbar toolbar-bottom-md">
-        {block 'layout_toolbar_inner'}
-            <div class="toolbar-inner">
-                <!-- Toolbar links -->
-                <a href="#" class="link">Link 1</a>
-                <a href="#" class="link">Link 2</a>
-            </div>
-        {/block}
-    </div>
-{/block}
-                    
+       

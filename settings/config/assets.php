@@ -24,6 +24,6 @@ $config['head']['template']['css'] = array(
 );
 
 $config['components'] = [
-    'ls-vendor', 'ls-core', 'ls-component'
+    'ls-vendor', 'ls-core', 'ls-component','f7-icon', 'icon'
 ];
 
