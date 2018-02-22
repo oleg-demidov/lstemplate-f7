@@ -1,0 +1,13 @@
+{
+    "name": "f7-navbar",
+    "version": "1.0.0",
+    "dependencies": {
+    },
+    "templates": {
+        "f7-navbar": "navbar.tpl"
+    },
+    "scripts": {
+    },
+    "styles": {
+    }
+}

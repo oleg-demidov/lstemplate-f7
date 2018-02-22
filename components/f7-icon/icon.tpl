@@ -1,11 +1,11 @@
 
 
 {* Название компонента *}
-{$component = 'f7-icons'}
+{$component = 'icon'}
 
 {component_define_params params=[ 'style', 'icon', 'classes', 'mods',  'attributes' , 'badge', 'badgeColor', 'style']}
 
-{$style = $style|default:'md'}
+{$style = $style|default:Config::Get('view.icons_style')}
 
 {$stylesIcon = [
     'md' => 'material-icons md-only',

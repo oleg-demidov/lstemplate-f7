@@ -53,6 +53,8 @@ if( Config::Get('view.theme') ){
     $config['view']['theme_layout'] = $themesLayouts[Config::Get('view.theme')];
 }
 
+$config['view']['icons_style'] = 'md';
+
 /*
  * Передача в шаблон указателя использовать ajax для заггрузки страниц
  */

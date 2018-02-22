@@ -50,11 +50,24 @@
     <div id="app">
         {block 'layout_app'}
             
-            <div class="panel panel-right">
-                {block 'layout_panel_right'}
-                    Панель
-                {/block}
-            </div>
+            {block 'layout_panel'}
+                {capture name="panel_content"}
+                    {if !$oUserCurrent}
+                        {$oUserCurrent = Engine::GetEntity('User_User')}
+                    {/if}
+                    {$aMenuItems = [
+                        ['text' => {$aLang.auth.login.title}, 'url' => '#'],
+                        ['text' => {$aLang.auth.registration.title}, 'url' => '#']
+                    ]}
+                    {component 'f7-user.card' 
+                        content=$oUserCurrent->getProfileName()
+                        avatar=$oUserCurrent->getProfileAvatarPath()
+                        links=$aMenuItems
+                    }                    
+                    
+                {/capture}
+                {component 'f7-panel' panelMods='left cover' content=$smarty.capture.panel_content}
+            {/block}
             
             <div class="statusbar">
                 {block 'layout_statusbar'}
@@ -73,7 +86,7 @@
                     {block 'layout_toolbar_common'}
                         
                         {component 'f7-toolbar' items=[
-                            [ 'text' => $aLang.topic.topics,   'url' => {router page='/'},      'name' => 'blog', 'icon' => ['name'=>'list' ]],
+                            [  'url' => {router page='/'},      'name' => 'blog', 'icon' => ['name'=>'list' ]],
                             [ 'text' => $aLang.blog.blogs,     'url' => {router page='blogs'},  'name' => 'blogs' ],
                             [ 'text' => $aLang.user.users,     'url' => {router page='people'}, 'name' => 'people' ],
                             [ 'text' => $aLang.activity.title, 'url' => {router page='stream'}, 'name' => 'stream' ]

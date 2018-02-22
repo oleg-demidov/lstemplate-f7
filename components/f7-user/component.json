@@ -1,0 +1,16 @@
+{
+    "name": "f7-user",
+    "version": "1.0.0",
+    "dependencies": {
+        
+    },
+    "templates": {
+        "card":"user.card.tpl"
+    },
+    "scripts": {
+       
+    },
+    "styles": {
+        "f-user":"css/user.css"
+    }
+}

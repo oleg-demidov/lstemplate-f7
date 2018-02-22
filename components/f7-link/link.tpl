@@ -3,7 +3,7 @@
 {* Название компонента *}
 {$component = 'link'}
 
-{component_define_params params=[ 'menu', 'url', 'text', 'icon', 'badge', 'badgeColor', 'popover', 'isExternal', 'isActive',  'attributes']}
+{component_define_params params=[ 'menu', 'url', 'text', 'icon',  'popover', 'isExternal', 'isActive',  'attributes']}
 
 {* Дефолтные значения *}
 {$url = $url|default:'#'}
@@ -31,7 +31,7 @@
     
 <a class="{$component} {cmods name=$component mods=$mods} {$classes}" {cattr list=$attributes} href="{$url}">
     {if $icon}
-        {component 'f7-icon' icon=$icon.name badgeColor=$badgeColor badge=$badge}
+        {component 'f7-icon' params=$icon }
         {if $text}
             <span>{$text}</span>
         {/if}       

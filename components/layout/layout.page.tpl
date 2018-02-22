@@ -7,33 +7,21 @@
         {**
         *  Верхняя панель
         *}
-        <div class="navbar">
-            {block 'layout_nawbar'}
-                <div class="navbar-inner">
-                    {block 'layout_nawbar_left'}
-                        <div class="left">
-                            <a href="#" class="link icon-only back">
-                                <i class="icon icon-back"></i>
-                            </a>
-                        </div>
-                    {/block}
-
-                    {block 'layout_nawbar_title'}
-                        <div class="title">
-                                {$sHtmlTitle}
-                        </div>
-                    {/block}
-
-                    {block 'layout_nawbar_right'}
-                        <div class="right">
-                            <a href="#" class="link icon-only">
-                                <i class="icon icon-bars"></i>
-                            </a>
-                        </div>
-                    {/block}
-                </div>
-            {/block}
-        </div>
+        {capture name='left'}
+            <a href="#" class="link icon-only back panel-open" data-panel="left">{component "f7-icon" icon="menu"}</a>
+        {/capture}
+        
+        {capture name='right'}
+            <a href="#" class="link icon-only back panel-open" data-panel="right"><i class="icon icon-back"></i></a>
+        {/capture}
+        
+        {block 'layout_navbar'}
+            {component 'f7-navbar'
+                left=$smarty.capture.left
+                title=$sHtmlTitle
+                right=$smarty.capture.right
+            }
+        {/block} 
         
         {*  
             Fixed toolbar goes ALWAYS after Navbar 
