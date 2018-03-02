@@ -5,9 +5,9 @@
 {extends 'layouts/layout.base.tpl'}
 
 {block 'layout_page_title'}
-    {$aLang.auth.login.title}
+    <div class="login-screen-title">{Config::Get('view.name')}</div>    
 {/block}
 
-{block 'layout_content'}
-    {component 'auth' template='login' showExtra=true}
+{block 'layout_page_content' append}
+    {component 'f7-auth' template='login' showExtra=true}
 {/block}

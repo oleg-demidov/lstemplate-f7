@@ -1,0 +1,13 @@
+{
+    "name": "f7-block",
+    "version": "1.0.0",
+    "dependencies": {
+    },
+    "templates": {
+        "f7-block": "block.tpl"
+    },
+    "scripts": {
+    },
+    "styles": {
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "name": "f7-grid",
+    "version": "1.0.0",
+    "dependencies": {
+    },
+    "templates": {
+        "f7-grid": "grid.tpl"
+    },
+    "scripts": {
+    },
+    "styles": {
+    }
+}

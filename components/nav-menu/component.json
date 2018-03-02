@@ -1,0 +1,15 @@
+{
+    "name": "nav-menu",
+    "version": "1.0.0",
+    "dependencies": {
+        
+    },
+    "templates": {
+        "nav-menu":"nav-menu.tpl"
+    },
+    "scripts": {
+       
+    },
+    "styles": {
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "name": "f7-domready",
+    "version": "1.0.0",    
+    "scripts": {
+        "domready":"js/domready.js"
+    }
+}

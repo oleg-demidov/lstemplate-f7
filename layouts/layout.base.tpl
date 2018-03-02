@@ -55,18 +55,20 @@
                     {if !$oUserCurrent}
                         {$oUserCurrent = Engine::GetEntity('User_User')}
                     {/if}
-                    {$aMenuItems = [
-                        ['text' => {$aLang.auth.login.title}, 'url' => '#'],
-                        ['text' => {$aLang.auth.registration.title}, 'url' => '#']
+                    {$aLoginItems = [
+                        ['text' => {$aLang.auth.login.title}, 'url' => "/auth/login", 'classes'=>"panel-close"],
+                        ['text' => {$aLang.auth.registration.title}, 'url' => '/auth/register']
                     ]}
                     {component 'f7-user.card' 
                         content=$oUserCurrent->getProfileName()
                         avatar=$oUserCurrent->getProfileAvatarPath()
-                        links=$aMenuItems
-                    }                    
+                        links=$aLoginItems
+                    }    
+                    
+                    {component 'nav-menu'}   
                     
                 {/capture}
-                {component 'f7-panel' panelMods='left cover' content=$smarty.capture.panel_content}
+                {component 'f7-panel' panelMods='right cover' content=$smarty.capture.panel_content}
             {/block}
             
             <div class="statusbar">

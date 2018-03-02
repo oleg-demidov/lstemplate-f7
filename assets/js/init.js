@@ -11,10 +11,16 @@ jQuery(document).ready(function($){
     ls.hook.run('ls_template_init_start',[],window);
 
     var options = Object.assign(ls.registry.get('app'), {routes:ls.registry.get('routes')});
-    console.log(options)
+
     var app = new Framework7(options);
+        
+    var mainView = app.views.create('.view-main', ls.registry.get('view'));
     
-    var mainView = app.views.create('.view-main');
-    
+    mainView.router.on('routeChange', function(xhr){
+        console.log(mainView.router);
+        //xhr.abort(500);
+        //return false;
+    }); 
+            
     ls.hook.run('ls_template_init_end',[],window);
 });

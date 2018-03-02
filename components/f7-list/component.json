@@ -1,0 +1,17 @@
+{
+    "name": "f7-list",
+    "version": "1.0.0",
+    "dependencies": {
+    },
+    "templates": {
+        "f7-list": "list.tpl",
+        "item":"list-item.tpl",
+        
+        "inputs":"list-inputs.tpl",
+        "input":"item-input.tpl"
+    },
+    "scripts": {
+    },
+    "styles": {
+    }
+}

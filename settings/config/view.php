@@ -63,6 +63,10 @@ $config['view']['ajax'] = getRequest('ajax', 0 /*$oSesion->GetCookie('ajax', 0)*
 //$oSesion->SetCookie('ajax', 0);
 
 
+$config['view']['view'] = [
+    'pushStateAnimateOnLoad' => true
+];
+
 /*
  *  Настройки основного Тулбара
  */

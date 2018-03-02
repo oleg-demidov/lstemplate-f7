@@ -1,0 +1,16 @@
+{
+    "name": "f7-recaptcha",
+    "version": "1.0.0",
+    "dependencies": {
+    },
+    "templates": {
+        "f7-recaptcha": "recaptcha.tpl"
+    },
+    "styles": {
+        
+    },
+    "scripts": {
+        "f7-recaptcha": "js/recaptcha.tpl",
+        "recaptcha":"https://www.google.com/recaptcha/api.js"  
+    }
+}

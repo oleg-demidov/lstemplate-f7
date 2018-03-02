@@ -9,6 +9,7 @@ $config['head']['template']['js'] = array(
 );
 
 $config['head']['default']['js'] = array(
+    "___path.skin.web___/components/f7-auth/js/init.js",
     //"___path.skin.web___/components/ls-vendor/html5shiv.js" => array('browser' => 'lt IE 9'),
     //"___path.skin.web___/components/ls-vendor/jquery.placeholder.min.js" => array('browser' => 'lt IE 9'),
 
@@ -19,11 +20,11 @@ $config['head']['default']['js'] = array(
 // Подключение стилей шаблона
 $config['head']['template']['css'] = array(
     "___path.skin.assets.web___/framework7/dist/css/framework7.min.css",
-    "___path.skin.assets.web___/css/layout.css"
+    "___path.skin.assets.web___/css/layout.css"     
 	
 );
 
 $config['components'] = [
-    'ls-vendor', 'ls-core', 'ls-component','f7-icon', 'icon', 'f7-user'
+    'ls-vendor', 'ls-core', 'ls-component','f7-icon', 'icon', 'f7-user', 'f7-auth'
 ];
 

@@ -2,31 +2,28 @@
 *  Начало page
 *}
 
+{*include "{$LS->Component_GetPath('f7-page')}/page.tpl"*}
+
 <div data-name="home" class="page">
 
         {**
         *  Верхняя панель
         *}
-        {capture name='left'}
-            <a href="#" class="link icon-only back panel-open" data-panel="left">{component "f7-icon" icon="menu"}</a>
-        {/capture}
-        
-        {capture name='right'}
-            <a href="#" class="link icon-only back panel-open" data-panel="right"><i class="icon icon-back"></i></a>
-        {/capture}
-        
         {block 'layout_navbar'}
+
             {component 'f7-navbar'
-                left=$smarty.capture.left
-                title=$sHtmlTitle
-                right=$smarty.capture.right
+                left    =   {component 'f7-link' 
+                                classes='back' 
+                                icon=['style'=> 'md', 'icon'=>'chevron_left'] 
+                                url='#'}
+                title   =   $sHtmlTitle
+                right   =   {component 'f7-link' 
+                                attributes=['data-panel'=>'right']
+                                icon=['style'=> 'md', 'icon'=>'menu'] 
+                                url='#' classes="panel-open"}
             }
-        {/block} 
-        
-        {*  
-            Fixed toolbar goes ALWAYS after Navbar 
-        *}
-        {block 'layout_toolbar_fixed'}{/block} 
+            
+        {/block}
 
         {**
         *  Контент page
@@ -39,15 +36,26 @@
 
                 {$layoutSidebarBlocks}
 
-                {show_blocks group='top' }
-
             {/block}
             
-            {*  
-                Static toolbar goes in the end inside of page-content
-            *}
-            {block 'layout_toolbar_static'}{/block} 
+            {show_blocks group='top' }
+            
         </div>
     
 </div>
-       
+{**
+*  Конец page
+*}
+
+{block 'layout_toolbar'}
+    <div class="toolbar toolbar-bottom-md">
+        {block 'layout_toolbar_inner'}
+            <div class="toolbar-inner">
+                <!-- Toolbar links -->
+                <a href="#" class="link">Link 1</a>
+                <a href="#" class="link">Link 2</a>
+            </div>
+        {/block}
+    </div>
+{/block}
+                    
