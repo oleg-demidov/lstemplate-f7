@@ -10,7 +10,23 @@ jQuery(document).ready(function($){
     // Хук начала инициализации javascript-составляющих шаблона
     ls.hook.run('ls_template_init_start',[],window);
 
-    var options = Object.assign(ls.registry.get('app'), {routes:ls.registry.get('routes')});
+    var routes = ls.registry.get('routes');
+    
+    var loadScripts = function(e,page){
+        var scripts = $(page.pageEl).find('script');
+        $.each(scripts, function(i,script){
+            $.getScript($(script).attr('src'));
+        })
+        eval($('#eval_script').text())
+    }
+    
+    $.each(routes, function(i,route){
+        route.on = {
+            pageInit:loadScripts
+        }
+    })
+    
+    var options = Object.assign(ls.registry.get('app'), {routes:routes});
 
     var app = new Framework7(options);
         

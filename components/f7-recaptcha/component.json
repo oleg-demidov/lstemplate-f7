@@ -10,7 +10,7 @@
         
     },
     "scripts": {
-        "f7-recaptcha": "js/recaptcha.tpl",
-        "recaptcha":"https://www.google.com/recaptcha/api.js"  
+        "recaptcha":"https://www.google.com/recaptcha/api.js",
+        "f7-recaptcha": "js/recaptcha.js"        
     }
 }

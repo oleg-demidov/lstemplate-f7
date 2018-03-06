@@ -9,7 +9,7 @@ $config['view']['app'] = [
     // Enable swipe panel
     'theme' => $config['view']['theme_layout']['theme_style'],
     'panel'=> [
-      'swipe'=> 'left',
+      'swipe'=> 'right',
     ],
     'routes'=>$config['view']['routes']
 ];

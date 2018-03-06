@@ -4,7 +4,8 @@
     "dependencies": {
     },
     "templates": {
-        "login": "auth.login.tpl"
+        "login": "auth.login.tpl",
+        "registration": "auth.registration.tpl"
     },
     "scripts": {
         "auth":"js/auth.js",

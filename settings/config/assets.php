@@ -9,7 +9,7 @@ $config['head']['template']['js'] = array(
 );
 
 $config['head']['default']['js'] = array(
-    "___path.skin.web___/components/f7-auth/js/init.js",
+    //"___path.skin.web___/components/f7-auth/js/init.js",
     //"___path.skin.web___/components/ls-vendor/html5shiv.js" => array('browser' => 'lt IE 9'),
     //"___path.skin.web___/components/ls-vendor/jquery.placeholder.min.js" => array('browser' => 'lt IE 9'),
 
@@ -26,5 +26,13 @@ $config['head']['template']['css'] = array(
 
 $config['components'] = [
     'ls-vendor', 'ls-core', 'ls-component','f7-icon', 'icon', 'f7-user', 'f7-auth'
+];
+
+$config['asset_actions'] = [
+    'auth' => [
+        'components' => ['f7-recaptcha'],
+        'lang' => ['auth.login'],
+        'vars' => ['view.routes']
+    ]
 ];
 

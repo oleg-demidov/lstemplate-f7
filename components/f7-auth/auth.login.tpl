@@ -37,7 +37,7 @@
     {component 'f7-block' 
         content={component 'f7-button' 
                     styles="fill" 
-                    text='Войти' 
+                    text=$aLang.auth.login.form.fields.submit 
                     classes="g-recaptcha"
                     attributes=['data-sitekey' => {Config::Get('recaptcha.sitekey')}, 
                                 'data-callback' => 'onSubmitRecaptcha']

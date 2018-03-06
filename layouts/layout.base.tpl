@@ -85,14 +85,14 @@
                     {*  
                         View common toolbar 
                     *}
-                    {block 'layout_toolbar_common'}
+                    {block 'layout_common_toolbar'}
                         
-                        {component 'f7-toolbar' items=[
+                        {*component 'f7-toolbar' items=[
                             [  'url' => {router page='/'},      'name' => 'blog', 'icon' => ['name'=>'list' ]],
                             [ 'text' => $aLang.blog.blogs,     'url' => {router page='blogs'},  'name' => 'blogs' ],
                             [ 'text' => $aLang.user.users,     'url' => {router page='people'}, 'name' => 'people' ],
                             [ 'text' => $aLang.activity.title, 'url' => {router page='stream'}, 'name' => 'stream' ]
-                        ]}
+                        ]*}
                     
                     {/block}
                     
