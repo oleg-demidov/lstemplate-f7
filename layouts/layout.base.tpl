@@ -15,7 +15,7 @@
     {*
            Определение темы f7 шаблона
     *}
-    {$classes = "{Config::Get('view.theme_color')} {Config::Get('view.theme_layout.theme_layout')}"}
+    {$classes = "{Config::Get('view.f7_theme_color')} {Config::Get('view.theme_layout.theme_layout')}"}
     
     {$classesPageContent = "{$classesPageContent} {((Config::Get('view.hide_bars_on_scroll'))?"hide-bars-on-scroll":"")}"}
     {$classesPageContent = "{$classesPageContent} {((Config::Get('view.hide_toolbar_on_scroll'))?"hide-toolbar-on-scroll":"")}"}
@@ -40,6 +40,7 @@
 
 {/block}
 
+
 {block 'layout_body' append}
     {hook run='layout_body_begin'}
     
@@ -57,7 +58,7 @@
                     {/if}
                     {$aLoginItems = [
                         ['text' => {$aLang.auth.login.title}, 'url' => "/auth/login", 'classes'=>"panel-close"],
-                        ['text' => {$aLang.auth.registration.title}, 'url' => '/auth/register']
+                        ['text' => {$aLang.auth.registration.title}, 'url' => '/auth/register', 'classes'=>"panel-close"]
                     ]}
                     {component 'f7-user.card' 
                         content=$oUserCurrent->getProfileName()

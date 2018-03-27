@@ -2,15 +2,18 @@
     "name": "f7-auth",
     "version": "1.0.0",
     "dependencies": {
+        "f7-recaptcha":"*"
     },
     "templates": {
         "login": "auth.login.tpl",
         "registration": "auth.registration.tpl"
     },
     "scripts": {
-        "auth":"js/auth.js",
-        "recaptcha":"https://www.google.com/recaptcha/api.js"  
+        "auth":"js/auth.js"
     },
     "styles": {
+    },
+    "init":{
+        "init":"js/init.js"
     }
 }

@@ -4,13 +4,11 @@
     "dependencies": {
     },
     "templates": {
-        "f7-recaptcha": "recaptcha.tpl"
     },
     "styles": {
         
     },
     "scripts": {
-        "recaptcha":"https://www.google.com/recaptcha/api.js",
-        "f7-recaptcha": "js/recaptcha.js"        
+        "recaptcha":"js/recaptcha.js"
     }
 }

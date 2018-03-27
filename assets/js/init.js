@@ -6,7 +6,9 @@
  * @author    Denis Shakhov <denis.shakhov@gmail.com>
  */
 
-jQuery(document).ready(function($){
+var app;
+
+jQuery(document).ready(function($){ console.log(ls.registry.get('progressbar_color'))
     // Хук начала инициализации javascript-составляющих шаблона
     ls.hook.run('ls_template_init_start',[],window);
 
@@ -28,9 +30,20 @@ jQuery(document).ready(function($){
     
     var options = Object.assign(ls.registry.get('app'), {routes:routes});
 
-    var app = new Framework7(options);
+    app = new Framework7(options);
         
     var mainView = app.views.create('.view-main', ls.registry.get('view'));
+    
+    console.log('backinit');
+    $(window).bind('statechange', function(event) {
+        //var state = History.getState();
+        console.log('back');
+        //History.log('History.stateChange: ' + $.param(state.data) + ' ' + state.url, event);
+        // check state object here and control the display of articles or UI elements
+        // eg if state.data.page === 1 then hide all pages except for page 1
+        event.preventDefault();
+        return false;
+    });
     
     mainView.router.on('routeChange', function(xhr){
         console.log(mainView.router);
@@ -40,3 +53,14 @@ jQuery(document).ready(function($){
             
     ls.hook.run('ls_template_init_end',[],window);
 });
+
+function onloadrecaptcha() { console.log('onloadrecaptcha')
+    $('.js-auth-registration-form').f7Auth({
+        with_recaptcha:true,
+        sitekey:ls.registry.get('recaptcha.sitekey')
+    });
+    /*$('.js-auth-registration-form button[type="submit"]').f7Recaptcha({
+        sitekey:ls.registry.get('recaptcha.sitekey'),
+        onsubmit:function(){ $('.js-auth-registration-form').submit(); }
+    });    */
+}

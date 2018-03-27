@@ -3,7 +3,7 @@
  *}
 
 {$component = 'item-input'}
-{component_define_params params=[ 'info', 'label', 'icon', 'media', 'inner', 'type', 'name', 'classes', 'attributes', 'placeholder', 'pattern' ]}
+{component_define_params params=[ 'info', 'label', 'icon', 'media', 'inner', 'type', 'name', 'required', 'classes', 'attributes', 'placeholder', 'pattern' ]}
 
 {block 'list_item_input_options'}
     {if $info}
@@ -34,7 +34,8 @@
                 </div>
             {/if}
             <div class="item-input-wrap">
-                <input type="{$type}" name="{$name}" placeholder="{$placeholder}" pattern="{$pattern}" {if $pattern}required validate{/if}>
+                <input type="{$type}" name="{$name}" placeholder="{$placeholder}" pattern="{$pattern}" {if $pattern}required validate{/if} 
+                       {if $required}required{/if}>
                 <span class="input-clear-button"></span>
                 {if $info}
                     <div class="item-input-info">{$info}</div>

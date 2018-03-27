@@ -6,7 +6,7 @@
  */
 $config['view']['layout'] = 'layout';
 
-$config['view']['theme_color'] = 'blue';
+$config['view']['theme_color'] = 'red';
 
 if(Config::Get('view.theme_color')){
     $config['view']['theme_color'] = Config::Get('view.theme_color');
@@ -23,6 +23,9 @@ $f7_theme_colors = [
     'white'=> 'color-theme-white',
     'black'=> 'color-theme-black'
 ];
+
+$config['view']['progressbar_color'] = 'blue';
+
 $config['view']['f7_theme_color'] = $f7_theme_colors[$config['view']['theme_color']]; //по умолчанию blue
 
 /*
