@@ -58,8 +58,8 @@
             this.element.serializeArray().forEach( function(el){
                 data[el.name] =  el.value;
             })
-            
-            this._load('submit', data, function(r){
+            console.log('ajaxsubmit');
+            this._submit('submit', this.element, function(r){
                 console.log(r);
             })
             console.log(data);

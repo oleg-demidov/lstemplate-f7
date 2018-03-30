@@ -63,11 +63,14 @@ $config['view']['icons_style'] = 'md';
  */
 //$oSesion = new ModuleSession();
 $config['view']['ajax'] = getRequest('ajax', 0 /*$oSesion->GetCookie('ajax', 0)*/);
+
+//echo $config['view']['ajax'];
 //$oSesion->SetCookie('ajax', 0);
 
 
 $config['view']['view'] = [
-    'pushStateAnimateOnLoad' => true
+    'pushState'                 => true,
+    'pushStateOnLoad'           => true
 ];
 
 /*
