@@ -15,6 +15,7 @@ jQuery(document).ready(function($){
     var routes = ls.registry.get('routes');
     
     var loadScripts = function(e,page){
+        console.log('loadScripts')
         var scripts = $(page.pageEl).find('script');
         $.each(scripts, function(i,script){
             $.getScript($(script).attr('src'));
@@ -22,39 +23,63 @@ jQuery(document).ready(function($){
         eval($('#eval_script').text())
     }
     
-    $.each(routes, function(i,route){
-        route.on = {
-            pageInit:loadScripts
-        }
-    })
+//    $.each(routes, function(i,route){
+//        route.on = {
+//            pageInit:nloadScripts
+//        }
+//    })
     
     var options = Object.assign(ls.registry.get('app'), {routes:routes});
+    
+    console.log(options)
 
     app = new Framework7(options);
+    
+    var options = Object.assign(ls.registry.get('view'), {
+        on:{
+            pageInit:loadScripts,
+            /*
+             * 
+             * Костыль для отмены подгрузки страницы после инициализации
+             */
+            /*routerAjaxStart:function(xhr, opt){
+                xhr.addEventListener("loadstart", function(e){
+                    var urlpar =  e.target.requestUrl.substr(0, e.target.requestUrl.indexOf('?')-1);
+                    console.log(window.location.pathname , urlpar)
+                    if(window.location.pathname === urlpar){                        
+                        e.target.abort();
+                        e.target.onload()
+                        return false;
+                    }
+                }, false);
+            }*/
+        }
+    });
             
     var mainView = app.views.create('.view-main', ls.registry.get('view'));
+        
+//    mainView.router.on('routerAjaxStart', function(xhr){
+////        var urlpar = '/' + xhr.requestUrl.substr(0, xhr.requestUrl.indexOf('?'));
+//        console.log(window.location.pathname, xhr.requestUrl)
+//        if(window.location.pathname === urlpar){
+//            mainView.router.off('routerAjaxStart');
+//            return false;
+//        }
+//    });
+   
     
-    $(window).bind('statechange', function(event) {
-        //var state = History.getState();
-        console.log('back');
-        //History.log('History.stateChange: ' + $.param(state.data) + ' ' + state.url, event);
-        // check state object here and control the display of articles or UI elements
-        // eg if state.data.page === 1 then hide all pages except for page 1
-        event.preventDefault();
-        return false;
-    });
-    
-    mainView.router.on('routeChange', function(xhr){
-       // history.pushState({}, "", mainView.router.url);
-        console.log(mainView.router);
+    mainView.router.on('routeChange', function(newRoute, previousRoute, router){
+        
+        //router.xhr.abort();
+        
+        console.log(router)
+//        console.log(window.location.pathname);
+//        console.log(previousRoute);
+//        console.log(newRoute);
+//        newRoute = previousRoute;
         //xhr.abort(500);
-        //return false;
     }); 
     
-    $(window).on('popstate', function(e){
-        //var path = 
-        console.log(e)
-    });
             
     ls.hook.run('ls_template_init_end',[],window);
 });

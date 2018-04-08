@@ -70,7 +70,10 @@ $config['view']['ajax'] = getRequest('ajax', 0 /*$oSesion->GetCookie('ajax', 0)*
 
 $config['view']['view'] = [
     'pushState'                 => true,
-    'pushStateOnLoad'           => true
+    'main'                      => true,
+    'pushStateOnLoad'           => false,
+    'pushStateRoot'             => Router::GetPathRootWeb(),
+    'pushStateSeparator'        => ''
 ];
 
 /*
