@@ -3,7 +3,7 @@
 // Подключение скриптов шаблона
 
 $config['head']['template']['js'] = array(
-    "___path.skin.assets.web___/framework7/dist/js/framework7.min.js",
+    "___path.skin.assets.web___/framework7/build/js/framework7.min.js",
     '___path.skin.assets.web___/js/init.js'
     
 );
@@ -20,13 +20,19 @@ $config['head']['default']['js'] = array(
 
 // Подключение стилей шаблона
 $config['head']['template']['css'] = array(
-    "___path.skin.assets.web___/framework7/dist/css/framework7.min.css",
+    "___path.skin.assets.web___/framework7/build/css/framework7.min.css",
     "___path.skin.assets.web___/css/layout.css"   
 	
 );
 
 $config['components'] = [
-    'ls-vendor', 'ls-core', 'ls-component','f7-icon', 'icon', 'f7-user', 'f7-auth', 'f7-recaptcha'
+    'ls-vendor', 'ls-core', 'field', 'ls-component', 'icon', 
+    
+//    'css-reset', 'css-helpers', 'typography', 'forms', 'grid',  'lightbox', 'avatar', 'slider', 'details', 'alert', 'dropdown', 'button', 'block',
+//    'nav', 'tooltip', 'tabs', 'modal', 'table', 'text', 'uploader', 'email',  'pagination', 'editor', 'more', 'crop',
+//    'performance', 'toolbar', 'actionbar', 'badge', 'autocomplete','item', 'highlighter', 'jumbotron', 'notification', 'blankslate', 'confirm',
+    
+     'f7-icon', 'f7-user', 'f7-auth', 'f7-notification'
 ];
 
 $config['asset_actions'] = [

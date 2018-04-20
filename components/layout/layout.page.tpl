@@ -5,7 +5,6 @@
 {*include "{$LS->Component_GetPath('f7-page')}/page.tpl"*}
 
 <div data-name="home" class="page">
-    {Config::Get('view.ajax')}
     {block 'layout_page_start'}
         {if Config::Get('view.ajax')}
             {$aHtmlHeadFiles.css}

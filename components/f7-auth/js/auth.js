@@ -13,7 +13,7 @@
             // Ссылки
             urls: {
                 // Вставка файла
-                submit: aRouter.auth + 'ajax-login',
+                register: aRouter.auth + 'ajax-register',
                 
             },
 
@@ -50,19 +50,13 @@
             this.elements.rbutton.f7Recaptcha('execute');
             return false;
         },
-        submit:function(){ ;
+        submit:function(response){ ;
             
-            this._trigger('onsubmit', null, { context: this });
+            this._trigger('onsubmit', null, { context: this });            
             
-            var data = [];
-            this.element.serializeArray().forEach( function(el){
-                data[el.name] =  el.value;
-            })
-            console.log('ajaxsubmit');
-            this._submit('submit', this.element, function(r){
+            this._submit('register', this.element, function(r){
                 console.log(r);
-            })
-            console.log(data);
+            }, { params:{ captcha:response } });
             return false;
         }
     });

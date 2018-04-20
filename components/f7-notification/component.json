@@ -1,0 +1,14 @@
+{
+    "name": "f7-notification",
+    "version": "1.0.0",
+    "dependencies": {
+        
+    },
+    "templates": {
+    },
+    "scripts": {
+       "f7-notification":"js/f7-notification.js"
+    },
+    "styles": {
+    }
+}

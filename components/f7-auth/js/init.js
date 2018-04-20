@@ -1,4 +1,4 @@
-jQuery(document).ready(function($){ console.log('initauth')
+jQuery(document).ready(function($){
     if(onloadrecaptcha !== undefined){
         onloadrecaptcha();
     }

@@ -1,0 +1,11 @@
+{
+    "name": "field",
+    "version": "1.0.0",
+    "dependencies": {
+       
+    },
+    "templates": {
+        
+        "captcha-recaptcha": "field.captcha-recaptcha.tpl"
+    }
+}

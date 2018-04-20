@@ -1,7 +1,7 @@
     /**
  * Ajax
  *
- * @module ajaxasas
+ * @module ajax
  *
  * @license   GNU General Public License, version 2
  * @copyright 2013 OOO "ЛС-СОФТ" {@link http://livestreetcms.com}
@@ -29,25 +29,6 @@ ls.ajax = (function ($) {
             }
         }
     };
-    
-    this.getxhr = function() {
-        var xhr = new window.XMLHttpRequest();
-        xhr.upload.addEventListener("progress", function(evt) {
-            if (evt.lengthComputable) {
-                var percentComplete = evt.loaded / evt.total;
-                app.progressbar.show(percentComplete, ls.registry.get('progressbar_color'));
-            }
-       }, false);
-
-       xhr.addEventListener("progress", function(evt) {
-           if (evt.lengthComputable) {
-               var percentComplete = evt.loaded / evt.total;
-               app.progressbar.show(percentComplete, ls.registry.get('progressbar_color'));
-           }
-       }, false);
-
-       return xhr;
-    },
 
     /**
      * Выполнение AJAX запроса, автоматически передает security key
@@ -58,6 +39,10 @@ ls.ajax = (function ($) {
 
         more.showNotices = typeof more.showNotices === 'undefined' ? true : more.showNotices;
         more.showProgress = typeof more.showProgress === 'undefined' ? true : more.showProgress;
+
+        if ( more.showProgress ) {
+            NProgress.start();
+        }
 
         if ( typeof LIVESTREET_SECURITY_KEY !== 'undefined' ) params.security_ls_key = LIVESTREET_SECURITY_KEY;
 
@@ -74,7 +59,6 @@ ls.ajax = (function ($) {
         var ajaxOptions = $.extend({}, {
             type: "POST",
             url: url,
-            xhr:this.getxhr(),
             data: params,
             dataType: 'json',
             success: function( response ) {
@@ -96,7 +80,7 @@ ls.ajax = (function ($) {
                 if ( $.isFunction( more.onError ) ) more.onError.apply( this, arguments );
             }.bind(this),
             complete: function(msg){
-                app.progressbar.hide();
+                NProgress.done();
                 if ( $.isFunction( more.onComplete ) ) more.onComplete.apply( this, arguments );
             }.bind(this)
         }, more);
@@ -120,6 +104,9 @@ ls.ajax = (function ($) {
         more.showNotices = typeof more.showNotices === 'undefined' ? true : more.showNotices;
         more.showProgress = typeof more.showProgress === 'undefined' ? true : more.showProgress;
 
+        if ( more.showProgress ) {
+            NProgress.start();
+        }
 
         if ( typeof LIVESTREET_SECURITY_KEY !== 'undefined' ) params.security_ls_key = LIVESTREET_SECURITY_KEY;
 
@@ -135,12 +122,11 @@ ls.ajax = (function ($) {
         var options = {
             type: 'POST',
             url: url,
-            xhr:this.getxhr(),
             dataType: more.dataType || 'json',
             data: params,
             beforeSubmit: function (arr, form, options) {
                 if ( lock ) ls.utils.formLock( form );
-                button && button.prop('disabled', true).addClass(ls.options.classes.states.loading);
+                button && button.prop('disabled', true);//.addClass(ls.options.classes.states.loading);
 
                 // Сбрасываем текущие ошибки
                 this.clearFieldErrors(form);
@@ -149,6 +135,7 @@ ls.ajax = (function ($) {
                 if (typeof more.validate == 'undefined' || more.validate === true) {
                     var res=form.parsley('validate');
                     if (!res) {
+                        NProgress.done();
                         if ( $.isFunction( more.onValidateFail ) ) more.onValidateFail.apply( this, arguments );
                     }
                     return res;
@@ -185,8 +172,8 @@ ls.ajax = (function ($) {
                 if ( $.isFunction( more.onError ) ) more.onError.apply( this, arguments );
             }.bind(this),
             complete: function() {
-                app.progressbar.hide();
-                button.prop('disabled', false).removeClass(ls.options.classes.states.loading);
+                NProgress.done();
+                button.prop('disabled', false);//.removeClass(ls.options.classes.states.loading);
 
                 if ( $.isFunction( more.onComplete ) ) more.onComplete.apply( this, arguments );
                 if ( lock ) ls.utils.formUnlock( form );

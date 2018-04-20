@@ -20,11 +20,11 @@
     ],
     [
         'type' => 'email', 
-        'name' => 'email',
+        'name' => 'mail',
         'required' => true,
         'label' => {lang name='field.email.label'}, 
-        'placeholder' => {lang name='field.email.label'},
-        'pattern' => '\w{1,100}@\w{1,50}\.\w{1,10}'
+        'placeholder' => {lang name='field.email.label'}
+        
     ],
     [
         'type' => 'password', 

@@ -1,6 +1,3 @@
-
-
-
 (function($) {
     "use strict";
 
@@ -40,12 +37,9 @@
             
         },
         recaptcha_call:function(){
-            console.log('recaptcha_call');
-            this.option('callback')( grecaptcha.getResponse(this.id) );
+            this.option('callback')();
         },
         execute:function(){
-            console.log('execute');
-            grecaptcha.reset(this.id);
             grecaptcha.execute(this.id);
         }
     });
